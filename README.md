@@ -2,7 +2,7 @@
 
 ## Objectives
 This lab will teach us the scheduling, configmaps, canary and blue-green deployment strategies of Kubernetes. Through Minikube, a simplified Kubernetes engine running on a single computer, we practice the key concepts and usage of Kubernetes.
-
+/workspaces/ensf400-lab8-kubernetes-2/assignment_3
 ## Environment
 
 ### Set Up Your GitHub CodeSpaces Instance

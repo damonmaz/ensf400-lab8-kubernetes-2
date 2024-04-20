@@ -1,5 +1,6 @@
 ### How to Run this Assignment
 
+NOTE: I am assuming that this is being done in 
 
 1. Start Minikube and neccesary addons
 ```bash
@@ -13,28 +14,19 @@ minikube addons enable ingress
 2. Apply every .yaml file
 ```bash
 kubectl apply -f nginx-configmap.yaml
-
 kubectl create -f nginx-dep.yaml
-
 kubectl apply -f nginx-svc.yaml
-
 kubectl create -f app-1-dep.yaml
-
 kubectl apply -f app-1-svc.yaml
-
 kubectl create -f app-2-dep.yaml
-
 kubectl apply -f app-2-svc.yaml
-
 kubectl create -f nginx-ingress.yaml
-
 kubectl create -f app-1-ingress.yaml
-
 kubectl create -f app-2-ingress.yaml
 ```
 
 
-3. Check that the deployments, services, and ingresses have been applied correctly
+3. Check that the deployments, services, and ingresses have been applied correctly and are currently running
 ```bash
 kubectl get deployments
 ```
@@ -58,4 +50,20 @@ minikube ip
 curl -kL http://<IP ADDRESS>
 or
 curl -kL http://192.168.49.2
+```
+Example Output:
+![alt text](ExampleOutput.png)
+
+6. Once finished, delete everything
+```bash
+kubectl delete -f nginx-configmap.yaml
+kubectl delete -f nginx-dep.yaml
+kubectl delete -f nginx-svc.yaml
+kubectl delete -f app-1-dep.yaml
+kubectl delete -f app-1-svc.yaml
+kubectl delete -f app-2-dep.yaml
+kubectl delete -f app-2-svc.yaml
+kubectl delete -f nginx-ingress.yaml
+kubectl delete -f app-1-ingress.yaml
+kubectl delete -f app-2-ingress.yaml
 ```
